@@ -1,0 +1,42 @@
+{% extends "base.html" %} <!-- extends from home -->
+
+{% block app_content %}
+    <!-- User avatar -->
+    <table>
+        <tr valign="top">
+            <td><img src="{{ user.avatar(128) }}"></td>
+            <td><h1> {{ user.username }}</h1>
+                {% if user.about %}<p>{{ user.about }}</p>{% endif %}
+                {% if user.last_active %}<p>Last active on: {{ user.last_active }}</p>{% endif %}
+            </td>
+        </tr>
+    </table>
+    <!-- Profile features -->
+    {% if user == current_user %}
+        <table>
+          <tr>
+            <td>
+              <form action="{{ url_for('.edit_profile', username=user.username, dash_url='edit_profile/') }}">
+                  <input type="submit" value="Edit Profile" />
+	           </form>
+            </td>
+          </tr>
+        </table>
+	<br>
+    <!-- follow/message -->
+    {% else %}
+    {% endif %}
+    <br>
+    <footer>
+	<!-- js stuff -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.js"></script>
+	<!-- cs stuff -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.7.1/min/dropzone.min.css">
+	<style type="text/css">
+	  td
+	  {
+    	    padding:0 15px;
+	  }
+	</style>
+    </footer>
+{% endblock %}

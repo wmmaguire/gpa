@@ -1,0 +1,18 @@
+    <!-- explore users -->
+    {% set results = true %}
+    {% if users %}
+        {% for user in users %}
+            {% include 'item/user.html' %}
+        {% endfor %}
+    {% else %}
+    	{% set results = false %}
+    {% endif %}
+    <!-- include pagination -->
+    {% if results %}
+        {% if prev_url %}
+            <a href="{{ prev_url }}">Next</a>
+        {% endif %}
+        {% if next_url %}
+            <a href="{{ next_url }}">Prev</a>
+        {% endif %}
+    {% endif %}

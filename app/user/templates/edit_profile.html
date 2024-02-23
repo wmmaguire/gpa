@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+    <h1>Edit Profile</h1>
+    <form action="" method="post">
+        {{ form.hidden_tag() }}
+        <!-- privacy -->
+        <table>
+          <tr>
+            {% for subfield in form.privacy %}
+                  <td>{{ subfield }}</td>
+                  <td>{{ subfield.label }}</td>
+            {% endfor %}
+          </tr>
+          {% for error in form.privacy.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+        </table>
+        <!-- gender -->
+        <table>
+          <tr>
+            {% for subfield in form.gender %}
+                  <td>{{ subfield }}</td>
+                  <td>{{ subfield.label }}</td>
+            {% endfor %}
+          </tr>
+          {% for error in form.gender.errors %}
+          <span style="color: red;">[{{ error }}]</span>
+          {% endfor %}
+        </table>
+        <!-- about -->
+        <p>
+            {{ form.about.label }}<br>
+            {{ form.about(cols=50, rows=4) }}<br>
+            {% for error in form.about.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <!-- dob -->
+        <p>
+            {{ form.dob.label }}<br>
+            {{ form.dob(size=16) }}<br>
+            {% for error in form.dob.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <!-- submit -->
+        <p>{{ form.submit() }}</p>
+    </form>
+{% endblock %}

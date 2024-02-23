@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+<!-- Simple home page -->
+{% block app_content %}
+    <h1>Welcome to the Generative Personal Assistant</h1>
+        <p> GPA is the best way to learn and grow.  Try it out. </p>
+    <h3>How it Works</h3>
+			<img src={{ url_for('home_blueprint.static', filename='logo.jpg') }} height="600" width="1066">
+    <p> This page should explain to users how to use the site
+    </p>
+{% endblock %}
