@@ -17,7 +17,7 @@ The GPA is the web backend server and ui that lets users engage in an ai powered
 - See [the changelog](CHANGELOG.md) to review the history of changes made to this project.
 
 ## Instructions
-This section contains information to help developers contribute to the project. This project is built using [symfony](https://symfony.com/doc/current/index.html).
+This section contains information to help developers contribute to the project. This project is built using [flask](https://flask.palletsprojects.com/en/3.0.x/).
 
 ### Getting Started
 In order to get started working on this project, you need to clone the repository and install all the dependencies:
